@@ -1,0 +1,33 @@
+---
+- name: Tap Homebrew repositories
+  homebrew_tap: name={{ item }} state=present
+  with_items:
+    - homebrew/binary
+    - homebrew/completions
+    - homebrew/dupes
+    - homebrew/versions
+
+- name: Update and upgrade Homebrew
+  shell: brew update && brew upgrade && brew cleanup
+
+- name: Install libraries with Homebrew
+  homebrew: name={{ item }} state=latest
+  with_items:
+    - awscli
+    - bash
+    - bash-completion
+    - cloc
+    - coreutils
+    - curl
+    - git
+    - pv
+    - the_silver_searcher
+    - tree
+    - vagrant-completion
+    - vcprompt
+    - vim
+    - watch
+    - wget
+
+- name: Install openssh with Homebrew
+  homebrew: name=openssh state=latest install_options=with-keychain-support
