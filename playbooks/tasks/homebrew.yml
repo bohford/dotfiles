@@ -20,6 +20,7 @@
     - coreutils
     - curl
     - git
+    - jq
     - pv
     - the_silver_searcher
     - tree
