@@ -16,12 +16,21 @@
     - awscli
     - bash
     - bash-completion
+    - cask
     - cloc
     - coreutils
+    - ctags
     - curl
+    - emacs
+    - findutils
     - git
+    - gnu-sed
+    - gnu-tar
     - jq
     - pv
+    - python
+    - readline
+    - ruby
     - the_silver_searcher
     - tree
     - vagrant-completion
