@@ -1,4 +1,5 @@
 [alias]
+	co = checkout
 	uncommit = reset --soft HEAD^
 	unstage = reset HEAD
 	pending = diff --cached

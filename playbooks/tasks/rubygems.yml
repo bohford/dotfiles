@@ -1,0 +1,6 @@
+---
+- name: Install ruby gems
+  gem: name={{ item }} state=latest
+  with_items:
+    - bundler
+    - rubocop

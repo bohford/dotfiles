@@ -8,36 +8,79 @@
     - homebrew/versions
 
 - name: Update and upgrade Homebrew
-  shell: brew update && brew upgrade && brew cleanup
+  shell: brew update && brew cleanup #brew upgrade && brew cleanup
 
 - name: Install libraries with Homebrew
   homebrew: name={{ item }} state=latest
   with_items:
+    - avro-tools
     - awscli
     - bash
     - bash-completion
-    - cask
+    - chruby
     - cloc
     - coreutils
+    - csshx
     - ctags
     - curl
-    - emacs
     - findutils
+    - fish
+    - fzf
     - git
     - gnu-sed
     - gnu-tar
+    - htop
     - jq
+    - leiningen
+    - maven
+    - npm
+    - openssl
+    - packer
     - pv
     - python
     - readline
     - ruby
+    - ruby-install
+    - screen # fixes 'screen-256color' support in tmux
+    - ssh-copy-id
     - the_silver_searcher
+    - tig
+    - tmux
+    - trash
     - tree
+    - unrar
     - vagrant-completion
     - vcprompt
     - vim
     - watch
     - wget
+    - wrk
+
+#- name: Install aspell with Homebrew
+#  homebrew: name=aspell state=latest install_options=with-all-langs
 
 - name: Install openssh with Homebrew
   homebrew: name=openssh state=latest install_options=with-keychain-support
+
+# TODO brew install emacs-plus --with-cocoa --with-gnutls --with-librsvg --with-imagemagick
+# TODO brew linkapps
+# TODO cp -r /usr/local/opt/emacs/Emacs.app /Applications/Emacs.app
+
+# npm devtools:
+# TODO npm install -g tern eslint babel-eslint eslint-plugin-react js-beautify
+
+- name: Install emacs with Homebrew
+  homebrew: name=emacs state=linked install_options=with-cocoa
+
+
+# TODO install fisherman
+# TODO install fish theme omf/theme-bobmyfish
+# TODO copy over fish config
+# TODO install tmuxified theme
+
+# git clone git@github.com:bodil/tmuxified.git
+# mv tmuxified/ .tmux
+# ln -sfn ~/.tmux/tmux.conf ~/.tmux.conf
+
+#set -g default-terminal "screen-256color"
+

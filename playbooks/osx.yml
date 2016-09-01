@@ -3,3 +3,5 @@
   tasks:
     - include: tasks/dotfiles.yml
     - include: tasks/homebrew.yml
+    - include: tasks/npm.yml
+    - include: tasks/rubygems.yml
